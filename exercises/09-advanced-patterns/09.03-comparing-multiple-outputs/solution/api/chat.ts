@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import {
   convertToModelMessages,
   createUIMessageStream,
@@ -56,24 +56,24 @@ export const POST = async (req: Request): Promise<Response> => {
   const stream = createUIMessageStream<MyMessage>({
     execute: async ({ writer }) => {
       const firstStreamResult = streamText({
-        model: google('gemini-2.5-flash-lite'),
+        model: anthropic('claude-haiku-5-5'),
         messages: modelMessages,
       });
 
       const secondStreamResult = streamText({
-        model: google('gemini-2.5-flash'),
+        model: anthropic('claude-opus-5-5'),
         messages: modelMessages,
       });
 
       await Promise.all([
         streamModelText({
           textStream: firstStreamResult.textStream,
-          model: 'Gemini 2.5 Flash Lite',
+          model: 'Claude Haiku 5.5',
           writer,
         }),
         streamModelText({
           textStream: secondStreamResult.textStream,
-          model: 'Gemini 2.5 Flash',
+          model: 'Claude Opus 5.5',
           writer,
         }),
       ]);

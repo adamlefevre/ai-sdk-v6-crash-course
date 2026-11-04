@@ -1,8 +1,8 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
-// TODO: Choose a model. I recommend using the Google Gemini model:
-// gemini-2.5-flash-lite
+// TODO: Choose a model. I recommend using the Anthropic Claude model:
+// claude-opus-5-5
 const model = TODO;
 
 const prompt = 'What is the capital of France?';

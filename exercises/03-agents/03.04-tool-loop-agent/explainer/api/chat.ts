@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import {
   createAgentUIStreamResponse,
   type InferAgentUIMessage,
@@ -58,7 +58,7 @@ const tools = {
 };
 
 const agent = new ToolLoopAgent({
-  model: google('gemini-2.5-flash'),
+  model: anthropic('claude-opus-5-5'),
   instructions: `
     You are a helpful assistant that can use a sandboxed file system to create, edit and delete files.
 

@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { stepCountIs, streamText, tool } from 'ai';
 import { z } from 'zod';
 import * as fsTools from './file-system-functionality.ts';
@@ -8,7 +8,7 @@ const PROMPT = `
 `;
 
 const result = streamText({
-  model: google('gemini-2.5-flash'),
+  model: anthropic('claude-opus-5-5'),
   system: `
     You are a helpful assistant that can use a sandboxed file system to create, edit and delete files.
 

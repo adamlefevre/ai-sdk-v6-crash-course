@@ -5,10 +5,10 @@ This streaming process is complex, but the AI SDK simplifies it for us. In this 
 Let's look at the problem we need to solve:
 
 ```ts
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 
-const model = google('gemini-2.5-flash');
+const model = anthropic('claude-opus-5-5');
 
 const prompt =
   'Give me the first paragraph of a story about an imaginary planet.';

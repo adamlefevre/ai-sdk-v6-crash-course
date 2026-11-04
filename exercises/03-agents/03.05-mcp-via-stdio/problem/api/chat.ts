@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import {
   convertToModelMessages,
   stepCountIs,
@@ -21,7 +21,7 @@ export const POST = async (req: Request): Promise<Response> => {
   const mcpClient = TODO;
 
   const result = streamText({
-    model: google('gemini-2.5-flash'),
+    model: anthropic('claude-opus-5-5'),
     messages: await convertToModelMessages(messages),
     system: `
       You are a helpful assistant that can use the GitHub API to interact with the user's GitHub account.

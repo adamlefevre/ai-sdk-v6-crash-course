@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -38,7 +38,7 @@ export const POST = async (req: Request): Promise<Response> => {
     .join('');
 
   const titleResult = generateText({
-    model: google('gemini-2.5-flash-lite'),
+    model: anthropic('claude-haiku-5-5'),
     prompt: `
       You are a helpful assistant that can generate titles for conversations.
 
@@ -66,7 +66,7 @@ export const POST = async (req: Request): Promise<Response> => {
   });
 
   const streamTextResult = streamText({
-    model: google('gemini-2.5-flash'),
+    model: anthropic('claude-opus-5-5'),
     messages: modelMessages,
     // TODO: declare the experimental_telemetry property using the following object:
     // - isEnabled: true

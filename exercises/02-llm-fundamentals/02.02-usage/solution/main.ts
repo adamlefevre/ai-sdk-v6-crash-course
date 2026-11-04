@@ -1,8 +1,8 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 
 const output = streamText({
-  model: google('gemini-2.5-flash-lite'),
+  model: anthropic('claude-opus-5-5'),
   prompt: `Which country makes the best sausages? Answer in a single paragraph.`,
 });
 

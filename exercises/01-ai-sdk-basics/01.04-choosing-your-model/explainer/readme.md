@@ -39,31 +39,30 @@ For each provider, you need a specific environment variable:
 You can then instantiate the model by just calling this `openai` or `google` or `anthropic` here:
 
 ```ts
-const model = openai('gpt-4o-mini');
+const model = anthropic('claude-opus-5-5');
 
 console.dir(model, { depth: null });
 ```
 
-I'm console logging the model down below just so we can see what it looks like. And we can see that you get an OpenAI responses language model.
+I'm console logging the model down below just so we can see what it looks like. And we can see that you get an Anthropic messages language model.
 
 You also get autocomplete on the model ID, so you can see all of the available options.
 
 ## Default Model for the Course
 
-Now, I've chosen Google as our default option. So most of the code in the exercises, by default, will be using Gemini models from Google. The reasons for that are:
+Now, I've chosen Anthropic as our default option. So most of the code in the exercises, by default, will be using Claude Opus 5.5 (`claude-opus-5-5`). A few exercises that contrast a cheap model with a capable one use Claude Haiku 5.5 (`claude-haiku-5-5`) for the cheap side. The reasons for that are:
 
-- They are extremely cheap
-- There is even a free tier to just get an API key and get started
-- They run very, very quickly
-- They are good enough for our purposes
+- Opus 5.5 is the current flagship Claude model, so what you learn here reflects what you'd ship
+- It handles tool calling, structured outputs and long context very reliably
+- Haiku 5.5 gives us a cheap, fast counterpart when we want to compare models
 
-However, if you want to use OpenAI and Anthropic for your models, all you'll need to do is just swap them out before you start the exercise. If you want to do it across the whole repo, you can probably do a pretty smart find and replace too.
+However, if you want to use OpenAI or Google for your models, all you'll need to do is just swap them out before you start the exercise. If you want to do it across the whole repo, you can probably do a pretty smart find and replace too.
 
-So take this as your opportunity to set up your environment variables and choose your model. If you're not sure which one to go for, just get yourself a [Gemini API key](https://aistudio.google.com/apikey).
+So take this as your opportunity to set up your environment variables and choose your model. If you're not sure which one to go for, just get yourself an [Anthropic API key](https://console.anthropic.com/).
 
 ## Steps To Complete
 
-- [ ] Decide which AI model provider you want to use (Google Gemini is recommended for beginners)
+- [ ] Decide which AI model provider you want to use (Anthropic Claude is the default for this course)
 
 - [ ] Create an API key for your chosen provider
   - For Google: [Sign up for Google AI Studio](https://aistudio.google.com/apikey)

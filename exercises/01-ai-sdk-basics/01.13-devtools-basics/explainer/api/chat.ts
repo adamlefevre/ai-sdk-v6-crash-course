@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { devToolsMiddleware } from '@ai-sdk/devtools';
 import {
   convertToModelMessages,
@@ -13,7 +13,7 @@ import {
 // Run `npx @ai-sdk/devtools@latest` in a separate terminal
 // Then open http://localhost:4983 to see LLM calls
 const model = wrapLanguageModel({
-  model: google('gemini-2.5-flash'),
+  model: anthropic('claude-opus-5-5'),
   middleware: devToolsMiddleware(),
 });
 

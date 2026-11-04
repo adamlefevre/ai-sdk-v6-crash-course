@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
@@ -14,7 +14,7 @@ const IIMT_ARTICLE = readFileSync(
 );
 
 const result = streamText({
-  model: google('gemini-2.5-flash-lite'),
+  model: anthropic('claude-opus-5-5'),
   prompt: `
     <task-context>
     You are a helpful TypeScript expert that can explain complex TypeScript code for beginner TypeScript developers. You will be given a complex TypeScript code and you will need to explain it in a way that is easy to understand.

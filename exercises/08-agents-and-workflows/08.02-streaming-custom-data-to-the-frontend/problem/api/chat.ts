@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import {
   createUIMessageStream,
   createUIMessageStreamResponse,
@@ -55,7 +55,7 @@ export const POST = async (req: Request): Promise<Response> => {
 
       // TODO - change to streamText and write to the stream as custom data parts
       const writeSlackResult = await generateText({
-        model: google('gemini-2.5-flash'),
+        model: anthropic('claude-opus-5-5'),
         system: WRITE_SLACK_MESSAGE_FIRST_DRAFT_SYSTEM,
         prompt: `
           Conversation history:
@@ -65,7 +65,7 @@ export const POST = async (req: Request): Promise<Response> => {
 
       // TODO - change to streamText and write to the stream as custom data parts
       const evaluateSlackResult = await generateText({
-        model: google('gemini-2.5-flash'),
+        model: anthropic('claude-opus-5-5'),
         system: EVALUATE_SLACK_MESSAGE_SYSTEM,
         prompt: `
           Conversation history:
@@ -77,7 +77,7 @@ export const POST = async (req: Request): Promise<Response> => {
       });
 
       const finalSlackAttempt = streamText({
-        model: google('gemini-2.5-flash'),
+        model: anthropic('claude-opus-5-5'),
         system: WRITE_SLACK_MESSAGE_FINAL_SYSTEM,
         prompt: `
           Conversation history:

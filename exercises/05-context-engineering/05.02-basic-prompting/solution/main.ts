@@ -1,10 +1,10 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 
 const INPUT = `Do some research on induction hobs and how I can replace a 100cm wide AGA cooker with an induction range cooker. Which is the cheapest, which is the best?`;
 
 const result = await streamText({
-  model: google('gemini-2.5-flash-lite'),
+  model: anthropic('claude-opus-5-5'),
   prompt: `
     <task-context>
     You are a helpful assistant that can generate titles for conversations.

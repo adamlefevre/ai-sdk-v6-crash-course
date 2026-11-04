@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 import { evalite } from 'evalite';
 
@@ -52,7 +52,7 @@ evalite('TS Release Notes', {
   ],
   task: async (input) => {
     const capitalResult = await generateText({
-      model: google('gemini-2.5-flash-lite'),
+      model: anthropic('claude-opus-5-5'),
       prompt: `
         You are a helpful assistant that can answer questions about TypeScript releases.
 

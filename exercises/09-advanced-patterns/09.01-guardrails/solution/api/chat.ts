@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import {
   convertToModelMessages,
   createUIMessageStream,
@@ -22,7 +22,7 @@ export const POST = async (req: Request): Promise<Response> => {
     execute: async ({ writer }) => {
       console.time('Guardrail Time');
       const guardrailResult = await generateText({
-        model: google('gemini-2.5-flash-lite'),
+        model: anthropic('claude-haiku-5-5'),
         system: GUARDRAIL_SYSTEM,
         messages: modelMessages,
       });
@@ -57,7 +57,7 @@ export const POST = async (req: Request): Promise<Response> => {
       }
 
       const streamTextResult = streamText({
-        model: google('gemini-2.5-flash'),
+        model: anthropic('claude-opus-5-5'),
         messages: modelMessages,
       });
 

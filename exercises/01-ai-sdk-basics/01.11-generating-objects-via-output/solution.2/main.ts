@@ -1,8 +1,8 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { generateObject, streamText } from 'ai';
 import z from 'zod';
 
-const model = google('gemini-2.5-flash');
+const model = anthropic('claude-opus-5-5');
 
 const stream = streamText({
   model,

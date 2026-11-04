@@ -18,7 +18,7 @@ We're then passing the system prompt into [`streamText`](./api/chat.ts) here und
 
 ```ts
 const streamTextResult = streamText({
-  model: google('gemini-2.5-flash'),
+  model: anthropic('claude-opus-5-5'),
   messages: modelMessages,
   system: SYSTEM_PROMPT,
 });

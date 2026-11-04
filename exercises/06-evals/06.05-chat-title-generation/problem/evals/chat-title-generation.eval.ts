@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 import { evalite } from 'evalite';
 import { readFileSync } from 'fs';
@@ -31,7 +31,7 @@ evalite('Chat Title Generation', {
   data: () => dataForEvalite,
   task: async (input) => {
     const result = await generateText({
-      model: google('gemini-2.5-flash-lite'),
+      model: anthropic('claude-opus-5-5'),
       prompt: `
         Generate me a title:
         ${input}

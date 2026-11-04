@@ -91,4 +91,4 @@ The model should describe what it sees in the image rather than failing silently
 
 - [ ] Make sure you're using a model that supports image analysis
 
-[Gemini 2.5 Flash](https://ai.google.dev/gemini-api/docs/models) has this capability built in.
+[Claude Opus 5.5](https://platform.claude.com/docs/en/build-with-claude/vision) has this capability built in.

@@ -43,15 +43,15 @@ However, we're expecting it to fail, so we're going to set it to zero:
 
 ```typescript
 await generateText({
-  model: google('gemini-2.5-flash-lite'),
+  model: anthropic('claude-opus-5-5'),
   prompt: text,
   maxRetries: 0,
 });
 ```
 
-When I run this with Gemini, I end up with an error: "You have exceeded your current quota."
+When I run this with Claude, I end up with an error saying the request is too large: the prompt exceeds the model's context window.
 
-Different model providers throw different errors. For instance, Anthropic will simply validate it and say the request is too large. But the concept here is the same: we have passed too much information to the LLM.
+Different model providers throw different errors. For instance, Gemini reports it as "You have exceeded your current quota." But the concept here is the same: we have passed too much information to the LLM.
 
 ## Understanding Context Window Limitations
 

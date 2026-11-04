@@ -3,7 +3,7 @@ import {
   streamText,
   type UIMessage,
 } from 'ai';
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 
 export const POST = async (req: Request): Promise<Response> => {
   const body: { messages: UIMessage[]; id: string } =
@@ -13,7 +13,7 @@ export const POST = async (req: Request): Promise<Response> => {
   console.log('id', id);
 
   const result = streamText({
-    model: google('gemini-2.5-flash'),
+    model: anthropic('claude-opus-5-5'),
     messages: await convertToModelMessages(messages),
   });
 

@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { anthropic } from '@ai-sdk/anthropic';
 import {
   createUIMessageStreamResponse,
   streamText,
@@ -17,7 +17,7 @@ export const POST = async (req: Request): Promise<Response> => {
 
   // TODO: pass the modelMessages to streamText
   const streamTextResult = streamText({
-    model: google('gemini-2.5-flash'),
+    model: anthropic('claude-opus-5-5'),
   });
 
   // TODO: create a UIMessageStream from the streamTextResult
